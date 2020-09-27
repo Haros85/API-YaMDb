@@ -1,4 +1,4 @@
-[![Continuous_Integration_YaMDB Actions Status](https://github.com/popperony/yamdb_final/tree/master/.github/workflows/yamdb.yaml/badge.svg)](https://github.com/popperony/yamdb_final/actions)
+![Continuous_Integration_YaMDB Actions Status](https://github.com/popperony/yamdb_final/workflows/Continuous_Integration_YaMDB/badge.svg)
 # Проект "YaMDb"
 Проект "**YaMDb**" — база отзывов пользователей о фильмах, книгах и музыке.  
 Задача проекта - создание API для организации доступа к базе отзывов о фильмах, книгах и музыке.  
