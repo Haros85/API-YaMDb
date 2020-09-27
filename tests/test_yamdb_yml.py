@@ -11,9 +11,9 @@ class TestWorkflow:
             with open(f'{os.path.join(settings.BASE_DIR, "yamdb_workflow.yaml")}', 'r') as f:
                 yamdb = f.read()
         except FileNotFoundError:
-            assert False, 'Проверьте, что добавили файл yamdb_workflow.yaml в корневой каталог для проверки'  # nopep8
+            assert False, 'Проверьте, что добавили файл yamdb_workflow.yaml в корневой каталог для проверки'  # noqa: E501
 
-        assert 'on: [push]' in yamdb, 'Проверьте, что добавили действие при пуше в файл yamdb_workflow.yaml'  # nopep8
-        assert 'pytest' in yamdb, 'Проверьте, что добавили pytest в файл yamdb_workflow.yaml'  # nopep8
-        assert 'appleboy/ssh-action' in yamdb, 'Проверьте, что добавили деплой в файл yamdb_workflow.yaml'  # nopep8
-        assert 'appleboy/telegram-action' in yamdb, 'Проверьте, что добавили доставку отправку telegram сообщения в файл yamdb_workflow.yaml'  # nopep8
+        assert 'on: [push]' in yamdb, 'Проверьте, что добавили действие при пуше в файл yamdb_workflow.yaml'  # noqa: E501
+        assert 'pytest' in yamdb, 'Проверьте, что добавили pytest в файл yamdb_workflow.yaml'  # noqa: E501
+        assert 'appleboy/ssh-action' in yamdb, 'Проверьте, что добавили деплой в файл yamdb_workflow.yaml'  # noqa: E501
+        assert 'appleboy/telegram-action' in yamdb, 'Проверьте, что добавили доставку отправку telegram сообщения в файл yamdb_workflow.yaml'  # noqa: E501
