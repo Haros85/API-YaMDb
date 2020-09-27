@@ -1,4 +1,4 @@
-name: Continuous Integration YaMDB
+name: Continuous_Integration_YaMDB
 
 on: [push]
 
