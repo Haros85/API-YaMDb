@@ -9,6 +9,4 @@ RUN pip install -r /code/requirements.txt
 
 COPY . /code
 
-CMD gunicorn api_yamdb.wsgi:application --bind 127.0.1.1:8000
-
-EXPOSE 80 8000 768
+CMD gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:5000
