@@ -17,7 +17,7 @@ services:
     env_file:
       - ./.env
     volumes:
-      - ./yamdb_final/static:/static
+      - static:/static
   nginx:
     build: ./nginx
     depends_on:
@@ -26,9 +26,13 @@ services:
       -  "80:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - static:/etc/nginx/static
+      - media:/etc/nginx/media
     links:
       - web
 
 volumes:
   postgres_data:
   yamdb_final:
+  static:
+  media:
