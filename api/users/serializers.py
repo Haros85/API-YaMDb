@@ -5,7 +5,6 @@ from django.core.cache import cache
 from django.core.mail import send_mail
 from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-
 from .models import User
 
 
@@ -49,13 +48,13 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             confirmation_code,
             'from@example.com',
             [f'{email}'],
-            fail_silently=False,
-        )       
+            fail_silently=False,)
         return self.data['email']
 
 
 class MyAuthTokenSerializer(serializers.ModelSerializer):
     email = serializers.EmailField()
+
     class Meta:
         model = User
         fields = ('email', 'confirmation_code')

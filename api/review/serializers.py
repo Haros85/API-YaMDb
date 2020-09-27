@@ -5,7 +5,6 @@ from rest_framework.exceptions import (
     AuthenticationFailed
 )
 
-from api.title.models import Title
 
 from .models import Review, Comment
 
