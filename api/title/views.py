@@ -1,14 +1,9 @@
 from django.http import Http404
-from django.shortcuts import render, get_object_or_404
-from rest_framework import permissions, viewsets, status, filters
+from django.shortcuts import get_object_or_404
+from rest_framework import permissions, viewsets, filters
 from rest_framework.exceptions import MethodNotAllowed
-from rest_framework.response import Response
 
-from api.users.permissions import (
-    IsAdminPermission,
-    IsModeratorPermission,
-    IsOwnerPermission
-)
+from api.users.permissions import IsAdminPermission
 
 from .filters import GenreFilter
 from .models import Category, Genre, Title

@@ -1,6 +1,5 @@
 from django.urls import path, include
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework.routers import DefaultRouter, SimpleRouter
+from rest_framework.routers import DefaultRouter
 
 from .views import RegisterView, ObtainAuthToken, UserViewSet
 

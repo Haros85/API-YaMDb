@@ -1,15 +1,10 @@
 import base64
-import datetime
 import random
 import string
 from django.core.cache import cache
 from django.core.mail import send_mail
-from django.utils import timezone
 from rest_framework import serializers
-from rest_framework.exceptions import ValidationError
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from rest_framework_simplejwt.views import TokenObtainPairView
-from urllib.parse import quote
 
 from .models import User
 
@@ -36,7 +31,6 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         email = validated_data['email']
-        payload = email
         if (email and User.objects.filter(email=email).exists()):
             raise serializers.ValidationError(
                 {'email': 'Email addresses must be unique.'}
@@ -62,13 +56,11 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
 class MyAuthTokenSerializer(serializers.ModelSerializer):
     email = serializers.EmailField()
-
     class Meta:
         model = User
         fields = ('email', 'confirmation_code')
 
     def validate(self, data):
-        send_email = self.initial_data['email']
         send_confirmation_code = data['confirmation_code']
         data = cache.get_many(['u', 'e', 'c_c'])
         if not data:

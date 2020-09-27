@@ -1,12 +1,8 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404
 from rest_framework import generics, permissions, status, viewsets
 from rest_framework.response import Response
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
-
-from .permissions import IsAdminPermission, IsModeratorPermission
+from rest_framework_simplejwt.views import TokenObtainPairView
+from .permissions import IsAdminPermission
 from .models import User
 from .serializers import (
     UserRegistrationSerializer,

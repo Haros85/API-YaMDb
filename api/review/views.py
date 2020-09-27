@@ -1,17 +1,6 @@
-import django_filters.rest_framework
 from django.shortcuts import get_object_or_404
-from rest_framework import filters, permissions, status, viewsets
-from rest_framework.exceptions import ValidationError
+from rest_framework import permissions, status, viewsets
 from rest_framework.response import Response
-
-from api.title.models import Category, Genre, Title
-from api.users.models import User
-from api.users.permissions import (
-    IsAdminPermission,
-    IsModeratorPermission,
-    IsOwnerPermission,
-)
-
 from .models import Review, Comment
 from .serializers import ReviewSerializer, CommentSerializer
 
